@@ -1,0 +1,24 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/service_platform?currentSchema=appointments
+    username: customers_app
+    password: customers_local
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
+  flyway:
+    default-schema: appointments
+    schemas:
+      - appointments
+    create-schemas: true
+
+clients:
+  customer-service:
+    base-url: http://localhost:8080

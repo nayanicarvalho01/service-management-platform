@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/service_platform?currentSchema=customers
+    username: customers_app
+    password: customers_local
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
+  flyway:
+    default-schema: customers
+    schemas:
+      - customers
+    create-schemas: true
